@@ -9,6 +9,7 @@ function Products(){
             <h3>Products Component</h3>
             <p>List of the the product we make</p>
             {JSON.stringify(ctx.users)}
+            {JSON.stringify(ctx.counter)}
         </div>
     );
 }  
