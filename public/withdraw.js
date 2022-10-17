@@ -1,8 +1,9 @@
 function Withdraw(){
+    const ctx = React.useContext(UserContext);
     return (
         <div>
             <h3>Withdraw Component</h3>
-            <p>This our story</p>
+            {JSON.stringify(ctx.users)}
         </div>
     );
 }  

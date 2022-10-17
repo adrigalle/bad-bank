@@ -1,19 +1,10 @@
-const Route       = ReactRouterDOM.Route;
-const Link        = ReactRouterDOM.Link;
-const HashRouter  = ReactRouterDOM.HashRouter;
-// referencing these from the routing library
-// adding this to the outside so that it is global and not just inside SPA
-const UserContext = React.createContext(null);
-
-
 function Spa() {
 
     return (
       <HashRouter>
         <div>
             <NavBar/>
-
-            <UserContext.Provider value={{users:['peter'], counter: 0}}>
+            <UserContext.Provider value={{users:[{name:'abel', email:'abel@mit.edu', password:'secret', balance:100}]}}>
               <Route path="/" exact         component={Home}     />
               <Route path="/alldata/"       component={AllData}    />          
               <Route path="/balance/"       component={Balance} />
