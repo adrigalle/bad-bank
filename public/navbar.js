@@ -1,4 +1,4 @@
-function Nav(){
+function NavBar(){
 
 return(
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -15,15 +15,27 @@ return(
                         <Link className="nav-link" to="/">Home</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to="/about/">About</Link>
+                        <Link className="nav-link" to="/CreateAccount">Create Account</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to="/products/">Products</Link>
+                        <Link className="nav-link" to="/login/">Login</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link className="nav-link" to="/deposit/">Deposit</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link className="nav-link" to="/withdraw/">Withdraw</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link className="nav-link" to="/balance/">Balance</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link className="nav-link" to="/alldata/">All Data</Link>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-);
+); 
 }

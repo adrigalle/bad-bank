@@ -11,7 +11,7 @@
     />
     <title>Bad Bank</title>
 
-    <!-- don't use this in production: -->
+    <!-- don't use this in production: transpiler -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
     <!-- adding bootstraps style -->
@@ -25,7 +25,7 @@
     <!-- we will put our react component inside this div -->
     <div id="root"></div>
  
-    <!-- load react and router -->
+    <!-- load react and router: libraries -->
     <script src="https://unpkg.com/react/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom/umd/react-dom.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-router@5.2.1/umd/react-router.min.js" crossorigin></script>
@@ -33,11 +33,16 @@
 
    
     <!-- load our react component -->
-    <script src="nav.js"        defer type="text/babel"></script>
-    <script src="home.js"       defer type="text/babel"></script>
-    <script src="about.js"      defer type="text/babel"></script>
-    <script src="products.js"   defer type="text/babel"></script>
-    <script src="index.js"      defer type="text/babel"></script>
+    <script src="context.js"          defer type="text/babel"></script>
+    <script src="navbar.js"           defer type="text/babel"></script>
+    <script src="home.js"             defer type="text/babel"></script>
+    <script src="createaccount.js"    defer type="text/babel"></script>
+    <script src="login.js"            defer type="text/babel"></script>
+    <script src="deposit.js"          defer type="text/babel"></script>
+    <script src="withdraw.js"         defer type="text/babel"></script>
+    <script src="balance.js"          defer type="text/babel"></script>
+    <script src="alldata.js"          defer type="text/babel"></script>
+    <script src="index.js"            defer type="text/babel"></script>
     
   </body>
 </html>

@@ -11,21 +11,21 @@ function Spa() {
     return (
       <HashRouter>
         <div>
-            <h1>Routing - Hello World</h1>
-            <Nav/>
-            <hr/>
+            <NavBar/>
+
             <UserContext.Provider value={{users:['peter'], counter: 0}}>
-              <Route path="/" exact    component={Home}     />
-              <Route path="/about/"    component={About}    />          
-              <Route path="/products/" component={Products} />
+              <Route path="/" exact         component={Home}     />
+              <Route path="/alldata/"       component={AllData}    />          
+              <Route path="/balance/"       component={Balance} />
+              <Route path="/createaccount/" component={CreateAccount} />
+              <Route path="/deposit/"       component={Deposit} />
+              <Route path="/login/"         component={Login} />
+              <Route path="/withdraw/"      component={Withdraw} />
             </UserContext.Provider>
         </div>
       </HashRouter>
     );
   }
-  // <hr> is a horizontal rule
-  // the little -- separate out the links in the navigation bar (not using styles yet so theyd be too close to each other)
-  // the user context
   
   ReactDOM.render(
     <Spa/>,

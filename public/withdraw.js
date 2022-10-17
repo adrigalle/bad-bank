@@ -1,7 +1,7 @@
-function About(){
+function Withdraw(){
     return (
         <div>
-            <h3>About Component</h3>
+            <h3>Withdraw Component</h3>
             <p>This our story</p>
         </div>
     );
