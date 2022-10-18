@@ -2,6 +2,11 @@ function Login(){
     const ctx = React.useContext(UserContext);
     const [status, setStatus]       = React.useState('');
 
+    function accountValidation(email, password) {
+        //I am looking in ctx
+
+    }
+
     function handleLogin() {
 
     }

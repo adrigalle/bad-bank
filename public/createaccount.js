@@ -10,15 +10,34 @@ function CreateAccount(){
         if (!field) {
             setStatus('Error: ' + label);
             setTimeout(() => setStatus(''),3000);
+            // this is to reset status after 3 seconds
             return false;
         }
         return true;
     }
 
+    function validateEmail(email, label) {
+        var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/; // simple email validation
+        if (!email) {
+            setStatus('Error: ' + label);
+            setTimeout(() => setStatus(''),3000);
+            // this is to reset status after 3 seconds
+            return false;
+        }
+        if(validRegex.test(email) == false) {
+            setStatus('Please enter a valid email address');
+            setTimeout(() => setStatus(''),3000);
+            // this is to reset status after 3 seconds
+            return false;
+        };
+        return true;
+    }
+    // need to add more validation for email and password
+
     function handleCreate() {
         console.log(name, email, password);
         if (!validate(name, 'name'))            return;
-        if (!validate(email, 'email'))          return;
+        if (!validateEmail(email, 'email'))          return;
         if (!validate(password, 'password'))    return;
         ctx.users.push({name, email, password, balance:100});
         // if all successful, push user into context
@@ -35,7 +54,7 @@ function CreateAccount(){
 
     return (
         <Card 
-            bgcolor="var(--blue)"
+            bgcolor="primary"
             header="Create Account"
             status={status}
             body={show ? (
