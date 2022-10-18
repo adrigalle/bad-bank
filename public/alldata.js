@@ -1,8 +1,21 @@
 function AllData(){
-    const ctx = React.useContext(UserContext);
+    //const ctx = React.useContext(UserContext);
     //console.log(JSON.stringify(ctx.users));
     const [data, setData] = React.useState([]);
-    
+
+    // React.useEffect(() =>{
+    //     setData(ctx.users); 
+    // });
+    // console.log(data);
+
+    React.useEffect(() => {
+        async function getData() {
+            const res = await fetch('./all-users.json');
+            const json = await res.json();
+            setData(json.users);
+        }
+        getData();
+    },[])
 
 
     return (

@@ -3,6 +3,8 @@ const Link        = ReactRouterDOM.Link;
 const HashRouter  = ReactRouterDOM.HashRouter;
 const UserContext = React.createContext(null);
 
+
+
 // const theUser(email, password) {
 //     const [currentUser, setCurrentUser] = React.useState({});
 //     let person = {email, password};
@@ -38,3 +40,15 @@ function Card(props){
 // if they dont exist then nothing will be added to the page
 
 
+function accessAllUsers() {
+    
+    React.useEffect(() => {
+        async function getData() {
+            const res = await fetch('./all-users.json');
+            const json = await res.json();
+            setData(json.users);
+        }
+        getData();
+    },[])
+
+}

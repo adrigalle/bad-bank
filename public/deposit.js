@@ -2,7 +2,7 @@ function Deposit(){
     const ctx = React.useContext(UserContext);
     const [status, setStatus]       = React.useState('');
     const [deposit, setDeposit] = React.useState('');
-    const [balance, setBalance] = React.useState(100);
+    const [balance, setBalance] = React.useState(ctx.balance);
 
 
     function handleDeposit() {

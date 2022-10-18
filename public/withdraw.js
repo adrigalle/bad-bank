@@ -2,12 +2,14 @@ function Withdraw(){
     const ctx = React.useContext(UserContext);
     const [status, setStatus]       = React.useState('');
     const [withdrawal, setWithdrawal] = React.useState('');
-    const [balance, setBalance] = React.useState(100);
+    const [balance, setBalance] = React.useState(ctx.balance);
+
+    //console.log({balance});
 
     function handleWithdraw() {
         console.log(withdrawal);
         //first check if withdrawal not more than total
-        let newBalance = parseFloat(balance) - parseFloat(withdrawal);
+        let newBalance = parseFloat({balance}) - parseFloat(withdrawal);
         setBalance(newBalance);
         setWithdrawal('');
     }
