@@ -8,16 +8,16 @@ function Login(){
     //const users = [];
 
     React.useEffect(() => {
-        async function getData() {
-            const res = await fetch('./all-users.json');
-            const json = await res.json();
-            setData(json.users);
-        }
-        getData();
+        // async function getData() {
+        //     const res = await fetch('./all-users.json');
+        //     const json = await res.json();
+        //     setData(json.users);
+        // }
+        // getData();
+        setData(allUsers);
     },[])
 
     const users = [...data];
-    const peep = {};
     
 
     // validate fields to make sure that they even work

@@ -9,13 +9,17 @@ function AllData(){
     // console.log(data);
 
     React.useEffect(() => {
-        async function getData() {
-            const res = await fetch('./all-users.json');
-            const json = await res.json();
-            setData(json.users);
-        }
-        getData();
+        setData(allUsers);
     },[])
+
+    // React.useEffect(() => {
+    //     async function getData() {
+    //         const res = await fetch('./all-users.json');
+    //         const json = await res.json();
+    //         setData(json.users);
+    //     }
+    //     getData();
+    // },[])
 
 
     return (

@@ -4,7 +4,7 @@ function CreateAccount(){
     const [name, setName]           = React.useState('');
     const [email, setEmail]         = React.useState('');
     const [password, setPassword]   = React.useState('');
-    const ctx = React.useContext(UserContext);
+    //const ctx = React.useContext(UserContext);
 
     function validate(field, label) {
         if (!field) {
@@ -33,14 +33,19 @@ function CreateAccount(){
         return true;
     }
     // need to add more validation for email and password
+    function addToJson(name, email, password) {
+        let newUser = {"name": name, "email":email, "password":password, balance:100};
+        allUsers.push(newUser);
+    }
 
     function handleCreate() {
         console.log(name, email, password);
         if (!validate(name, 'name'))            return;
-        if (!validateEmail(email, 'email'))          return;
+        if (!validateEmail(email, 'email'))     return;
         if (!validate(password, 'password'))    return;
-        ctx.users.push({name, email, password, balance:100});
+        //ctx.push({name, email, password, balance:100});
         // if all successful, push user into context
+        addToJson(name, email, password);
         setShow(false);
     }
 
