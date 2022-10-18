@@ -11,9 +11,13 @@ code {
     monospace;
 }
 
-.bg-nav:hover {
-  background-color: var(--secondary);
+.nav-item:hover {
+  background: radial-gradient(ellipse, var(--light-blue) 5%, transparent 70%);
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+}
+
+.nav {
+  margin-left: auto;
 }
 
 .btn-light {
@@ -21,24 +25,30 @@ code {
 }
 
 .bg-dark {
-  background-color: var(--blue);
+  background: linear-gradient(90deg, var(--dark-blue),var(--blue));
 }
 
 .nav-link {
-  color: var(--off-white);
+  color: var(--beige);
 }
 .nav-link:hover {
-  color: var(--beige);
+  color: var(--off-white);
 }
 .nav-link:focus {
   color: var(--yellow);
 }
+.table {
+  border: #d8a202;
+
+}
 
 
 :root {
-  --dark-blue: #2c3639;
-  --blue: #3F4E4F;
-  --yellow: #966844;
+  --dark-blue: #1C2C37;
+  --blue: #244D61;
+  --light-blue: #517886;
+  --dark-yellow:#70421F;
+  --yellow: #D58A45;
   --white: #fff;
   --gray: #C2C8C6;
   --beige: #DCD7C9;

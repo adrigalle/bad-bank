@@ -31,3 +31,5 @@ function Card(props){
 
 // the props.title thing is checking to see if there even is a title or the rest of the things
 // if they dont exist then nothing will be added to the page
+
+
