@@ -3,6 +3,8 @@ const Link        = ReactRouterDOM.Link;
 const HashRouter  = ReactRouterDOM.HashRouter;
 const UserContext = React.createContext(null);
 
+//const [currentUser, setCurrentUser] = React.useState({});
+
 // can add other components that are used throughout here!
 // here going to make new card component
 function Card(props){
@@ -13,6 +15,7 @@ function Card(props){
         // checks if the component in other pages has a color, if not then white
         return 'card mb-3 ' + bg + txt;
     }
+
     return (
         <div className={classes()} style={{maxWidth: "18rem"}}>
             <div className="card-header">{props.header}</div>
