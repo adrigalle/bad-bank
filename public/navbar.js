@@ -39,3 +39,5 @@ return(
 
 ); 
 }
+
+// add login button + logout button that resets current user

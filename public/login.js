@@ -5,9 +5,11 @@ function Login(){
     function accountValidation(email, password) {
         //I am looking in ctx
 
+
     }
 
-    function handleLogin() {
+    function handleLogin(email, password) {
+        //theUser(email, password);
 
     }
 

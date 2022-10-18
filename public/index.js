@@ -1,5 +1,5 @@
 function Spa() {
-  const [currentUser, setCurrentUser] = React.useState({});
+    
 
     return (
       <HashRouter>
@@ -21,7 +21,7 @@ function Spa() {
             </UserContext.Provider>
         </div>
       </HashRouter>
-    );
+    ); 
   }
   
   ReactDOM.render(

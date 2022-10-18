@@ -2,11 +2,7 @@ function AllData(){
     const ctx = React.useContext(UserContext);
     //console.log(JSON.stringify(ctx.users));
     const [data, setData] = React.useState([]);
-
-    React.useEffect(() =>{
-        setData(ctx.users);
-    });
-    console.log(data);
+    
 
 
     return (

@@ -3,7 +3,12 @@ const Link        = ReactRouterDOM.Link;
 const HashRouter  = ReactRouterDOM.HashRouter;
 const UserContext = React.createContext(null);
 
+// const theUser(email, password) {
+//     const [currentUser, setCurrentUser] = React.useState({});
+//     let person = {email, password};
 
+//     setCurrentUser(person);
+// }
 
 // can add other components that are used throughout here!
 // here going to make new card component
