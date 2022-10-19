@@ -13,6 +13,9 @@ function Withdraw(){
         //setBalance(newBalance);
         ctx.balance = parseFloat(ctx.balance) - parseFloat(withdrawal);
         setWithdrawal('');
+        
+        console.log(allUsers);
+
     }
 
     return (

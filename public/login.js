@@ -5,7 +5,6 @@ function Login(){
     const [reqPassword, setReqPassword] = React.useState('');
     const [show, setShow] = React.useState(true);
     const [data, setData] = React.useState([]);
-    //const users = [];
 
     React.useEffect(() => {
         // async function getData() {
@@ -106,6 +105,10 @@ function Login(){
                 ) : (
                 <>
                     <h5>Success Logging in!</h5>
+                    <p>Welcome {ctx.name}!</p>
+                    <button className="btn btn-light">
+                        <Link to="/account/">go to account</Link>
+                    </button>
                 </>
 
                 )}

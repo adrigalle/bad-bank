@@ -3,7 +3,6 @@ const Link        = ReactRouterDOM.Link;
 const HashRouter  = ReactRouterDOM.HashRouter;
 const UserContext = React.createContext(null);
 
-const jsonFile = "./all-users.json";
 
 const allUsers = [
         {
@@ -43,6 +42,7 @@ const allUsers = [
 
 // can add other components that are used throughout here!
 // here going to make new card component
+
 function Card(props){
     function classes(){
         const bg = props.bgcolor ? ' bg-' + props.bgcolor : ' ';
