@@ -13,7 +13,7 @@ function Account(){
                     <>
                         Name: &emsp;&emsp;&emsp; {ctx.name} <br/>
                         Email: &emsp;&emsp;&emsp; {ctx.email} <br/>
-                        Balance: &emsp;&emsp; {ctx.balance} <br/>
+                        Balance: &emsp;&emsp; ${ctx.balance} <br/>
                         <div className="d-grid gap-2 col-8 mx-auto">
                             <button className="btn btn-light">
                                 <Link to="/deposit/">Make a Deposit</Link>

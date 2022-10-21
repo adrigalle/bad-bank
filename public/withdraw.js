@@ -26,7 +26,7 @@ function Withdraw(){
             status={status}
             body={
                 <>
-                    Balance &emsp;&emsp; {ctx.balance} <br/><br/>
+                    Balance &emsp;&emsp; ${ctx.balance} <br/><br/>
                     Withdraw Amount<br/>
                     <input type="input" className="form-control" id="withdraw" placeholder="Withdraw Amount" value={withdrawal} onChange={e => setWithdrawal(e.currentTarget.value)}/><br/>
                     <button type="submit" className="btn btn-light" onClick={handleWithdraw}>Withdraw</button>

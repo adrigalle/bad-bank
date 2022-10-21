@@ -23,7 +23,7 @@ function Deposit(){
             status={status}
             body={
                 <>
-                    Balance &emsp;&emsp; {ctx.balance} <br/><br/>
+                    Balance &emsp;&emsp; ${ctx.balance} <br/><br/>
                     Deposit Amount<br/>
                     <input type="input" className="form-control" id="deposit" placeholder="Deposit Amount" value={deposit} onChange={e => setDeposit(e.currentTarget.value)}/><br/>
                     <button type="submit" className="btn btn-light" onClick={handleDeposit}>Deposit</button>
