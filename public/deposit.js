@@ -1,37 +1,94 @@
 function Deposit(){
-    const ctx = React.useContext(UserContext);
-    const [status, setStatus]       = React.useState('');
-    const [deposit, setDeposit] = React.useState('');
-    //const [balance, setBalance] = React.useState(ctx.balance);
+  const [show, setShow]     = React.useState(true);
+  const [status, setStatus] = React.useState('');  
 
 
-    function handleDeposit() {
-        console.log(deposit);
+  return (
+    <Card
+      bgcolor="warning"
+      header="Deposit"
+      status={status}
+      body={show ? 
+        <DepositForm setShow={setShow} setStatus={setStatus}/> :
+        <DepositMsg setShow={setShow} setStatus={setStatus}/>}
+    />
+  )
+}
 
-        //first check if withdrawal not more than total
-        //let newBalance = parseFloat(balance) + parseFloat(deposit);
-        //setBalance(newBalance);
-        ctx.balance = parseFloat(ctx.balance) + parseFloat(deposit);
-        setDeposit('');
-    }
+function DepositMsg(props){
+  return (<>
+    <h5>Success</h5>
+    <button type="submit" 
+      className="btn btn-light" 
+      onClick={() => {
+          props.setShow(true);
+          props.setStatus('');
+      }}>
+        Deposit again
+    </button>
+  </>);
+} 
 
-    return (
-        <Card 
-            bgcolor="success"
-            header="Deposit"
-            txtcolor="black"
-            status={status}
-            body={
-                <>
-                    Balance &emsp;&emsp; ${ctx.balance} <br/><br/>
-                    Deposit Amount<br/>
-                    <input type="input" className="form-control" id="deposit" placeholder="Deposit Amount" value={deposit} onChange={e => setDeposit(e.currentTarget.value)}/><br/>
-                    <button type="submit" className="btn btn-light" onClick={handleDeposit}>Deposit</button>
-                </>
-            }
+function DepositForm(props){
+  const [amount, setAmount] = React.useState('');
+  const { user, userBalance, setUserBalance } = React.useContext(UserContext); 
+  
+  const btnValidate = () => {
+    return amount.length;
+  }
+  const amountValidate = () => {
+      if(!Number(amount)) {
+        props.setStatus('Please enter a valid amount');
+        setTimeout(() => props.setStatus(''),3000);
+        return false;
+      }
+      return true;
+  }
+  const amountNegative = () => {
+      if(amount < 0) {
+        props.setStatus('Please enter a positive amount');
+        setTimeout(() => props.setStatus(''),3000);
+        return false;
+      }
+      props.setStatus(`Successfully deposited $${amount} to account!`);
+      setTimeout(() => props.setStatus(''),3000);
+      console.log(JSON.stringify(user));
+      return true;
+  }
 
-            
-        
-        />
-    );
-}  
+  function handle(){
+    if(!amountValidate(amount)) return;
+    if(!amountNegative(amount)) return;
+    fetch(`/account/update/${user.email}/${amount}`)
+    .then(response => response.text())
+    .then(text => {
+        try {
+            const data = JSON.parse(text);
+            props.setStatus('Your new balance is: $' + JSON.stringify(data.value.balance));
+            props.setShow(false);
+            setUserBalance(data.value.balance);
+            console.log('JSON:', data);
+        } catch(err) {
+            props.setStatus('Deposit failed')
+            console.log('err:', text);
+        }
+    });
+  }
+
+  return(<>
+
+    Email: {user.email}<br/><br/>
+      
+    Amount<br/>
+    <input type="number" 
+      className="form-control" 
+      placeholder="Enter amount" 
+      value={amount} onChange={e => setAmount(e.currentTarget.value)}/><br/>
+
+    <button type="submit" 
+      className="btn btn-light" 
+      onClick={handle}
+      disabled={!btnValidate()}>Deposit</button>
+
+  </>);
+}

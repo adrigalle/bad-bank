@@ -1,29 +1,23 @@
 function AllData(){
-    //const ctx = React.useContext(UserContext);
-    //console.log(JSON.stringify(ctx.users));
-    const [data, setData] = React.useState([]);
-
-    // React.useEffect(() =>{
-    //     setData(ctx.users); 
-    // });
-    // console.log(data);
+    const [users, setUsers] = React.useState([]); 
+    const { user, showUser, userBalance } = React.useContext(UserContext); 
 
     React.useEffect(() => {
-        setData(allUsers);
-    },[])
+        
+        // fetch all accounts from API
+        fetch('/account/all')
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                setUsers([...data]);   
+            });
 
-    // React.useEffect(() => {
-    //     async function getData() {
-    //         const res = await fetch('./all-users.json');
-    //         const json = await res.json();
-    //         setData(json.users);
-    //     }
-    //     getData();
-    // },[])
-
+    }, []);
 
     return (
-        <>
+    <>
+        <h5>All Data in Store:</h5>
+
         <table className="table table-hover table-bordered table-sm w-50">
             <thead>
                 <tr>
@@ -34,7 +28,7 @@ function AllData(){
                 </tr>
             </thead>
             <tbody>
-                {data.map((user, index) =>(
+                {users.map((user, index) =>(
                     <tr key={index.toString()}>
                         <td>{user.name}</td>
                         <td>{user.email}</td>
@@ -44,6 +38,29 @@ function AllData(){
                 ))}
             </tbody>
         </table>
-        </>
-    );
-}  
+
+        {showUser ? (
+            <>
+                <h5>Current user</h5>
+                <table className="table table-hover table-bordered table-sm w-50">
+                    <thead>
+                        <tr>
+                            <th className="th-lg" scope="col">Name</th>
+                            <th className="th-lg" scope="col">Email</th>
+                            <th className="th-lg" scope="col">Balance</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{user.name}</td>
+                            <td>{user.email}</td>
+                            <td>${userBalance}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </>
+        ): (
+            <h5>No Current User</h5>
+        )}
+    </>);
+}

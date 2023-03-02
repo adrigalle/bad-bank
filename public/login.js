@@ -1,117 +1,74 @@
 function Login(){
-    const ctx = React.useContext(UserContext);
-    const [status, setStatus]       = React.useState('');
-    const [reqEmail, setReqEmail]   = React.useState('');
-    const [reqPassword, setReqPassword] = React.useState('');
-    const [show, setShow] = React.useState(true);
-    const [data, setData] = React.useState([]);
+  const [show, setShow]     = React.useState(true);
+  const [status, setStatus] = React.useState('');    
+  
 
-    React.useEffect(() => {
-        // async function getData() {
-        //     const res = await fetch('./all-users.json');
-        //     const json = await res.json();
-        //     setData(json.users);
-        // }
-        // getData();
-        setData(allUsers);
-    },[])
+  return (
+    <Card
+      bgcolor="secondary"
+      header="Login"
+      status={status}
+      body={show ? 
+        <LoginForm setShow={setShow} setStatus={setStatus}/> :
+        <LoginMsg setShow={setShow} setStatus={setStatus}/>}
+    />
+  ) 
+}
 
-    const users = [...data];
-    
+function LoginMsg(props){
+  const { user } = React.useContext(UserContext);
+  return(<>
+    <h5>Success! You are logged in as: {user.name}</h5>
+    <button type="submit" 
+      className="btn btn-light" 
+      onClick={() => props.setShow(true)}>
+        Authenticate again
+    </button>
+  </>);
+}
 
-    // validate fields to make sure that they even work
-    function validate(field, label) {
-        if (!field) {
-            setStatus('Error: ' + label);
-            setTimeout(() => setStatus(''),3000);
-            // this is to reset status after 3 seconds
-            return false;
+function LoginForm(props){
+  const [email, setEmail]       = React.useState('');
+  const [password, setPassword] = React.useState('');
+  const { setUser, setShowUser, setUserBalance } = React.useContext(UserContext);
+
+  function handle(){
+    fetch(`/account/login/${email}/${password}`)
+    .then(response => response.text())
+    .then(text => {
+        try {
+            const data = JSON.parse(text);
+            props.setStatus('');
+            props.setShow(false);
+            console.log('JSON:', data);
+            setUser(data);
+            setUserBalance(data.balance);
+            setShowUser(true);
+        } catch(err) {
+            props.setStatus(text)
+            console.log('err:', text);
         }
-        return true;
-    }
-    function validateEmail(email, label) {
-        var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/; // simple email validation
-        if (!email) {
-            setStatus('Error: ' + label);
-            setTimeout(() => setStatus(''),3000);
-            // this is to reset status after 3 seconds
-            return false;
-        }
-        if(validRegex.test(email) == false) {
-            setStatus('Please enter a valid email address');
-            setTimeout(() => setStatus(''),3000);
-            // this is to reset status after 3 seconds
-            return false;
-        };
-        return true;
-    }
-
-    function accountValidation(reqEmail, reqPassword) {
-        // making all email lower case to check
-        const emailCheck = reqEmail.toLowerCase();
-        console.log(emailCheck);
-        const test1 = users.find(user => {
-            if(user.email === emailCheck) {
-                console.log(user);
-                if(user.password === reqPassword) {
-                    ctx.name = user.name;
-                    ctx.email = user.email;
-                    ctx.password = user.password;
-                    ctx.balance = user.balance;
-                    return true;
-                }
-                else return false;
-
-            } 
-            else {
-                setStatus('Incorrect email or password');
-                setTimeout(() => setStatus(''),3000);
-                return false;
-            };
-           
-        });
-
-        return true;
+    });
+  }
 
 
-    }
+  return (<>
 
-    function handleLogin() {
-        //theUser(email, password);
-        console.log(`${reqEmail} : ${reqPassword}`);
-        //console.log(users);
-        if (!validateEmail(reqEmail, 'email'))     return;
-        if (!validate(reqPassword, 'password'))    return;
-        if (!accountValidation(reqEmail, reqPassword)) return;
-        console.log(ctx);
-        setShow(false);
+    Email<br/>
+    <input type="input" 
+      className="form-control" 
+      placeholder="Enter email" 
+      value={email} 
+      onChange={e => setEmail(e.currentTarget.value)}/><br/>
 
-    }
+    Password<br/>
+    <input type="password" 
+      className="form-control" 
+      placeholder="Enter password" 
+      value={password} 
+      onChange={e => setPassword(e.currentTarget.value)}/><br/>
 
-    return (
-        <Card 
-            bgcolor="warning"
-            header="Login"
-            txtcolor="black"
-            status={status}
-            body={show ? (
-                <>
-                    Email address<br/>
-                    <input type="input" className="form-control" id="email" placeholder="Enter email" value={reqEmail} onChange={e => setReqEmail(e.currentTarget.value)}/><br/>
-                    Password<br/>
-                    <input type="input" className="form-control" id="password" placeholder="Enter password" value={reqPassword} onChange={e => setReqPassword(e.currentTarget.value)}/><br/>
-                    <button type="submit" className="btn btn-light" onClick={handleLogin}>Login</button>
-                </>
-                ) : (
-                <>
-                    <h5>Success Logging in!</h5>
-                    <p>Welcome {ctx.name}!</p>
-                    <button className="btn btn-light">
-                        <Link to="/account/">go to account</Link>
-                    </button>
-                </>
-
-                )}
-        />
-    );
-}  
+    <button type="submit" className="btn btn-light" onClick={handle}>Login</button>
+   
+  </>);
+}
