@@ -1,0 +1,44 @@
+[
+    {
+        "name":"Abel", 
+        "email":"abel@mit.edu", 
+        "password":"secret", 
+        "balance":100
+    },
+    {
+        "name":"jane doe", 
+        "email":"jane@me.com", 
+        "password":"access123", 
+        "balance":100
+    },
+    {
+        "name":"Peter Parker", 
+        "email":"peter@mit.edu", 
+        "password":"Passcode321", 
+        "balance":100
+    },
+    {
+        "name":"John Smith", 
+        "email":"john@msn.com", 
+        "password":"Letmein33", 
+        "balance":100},
+    {
+        "name":"Maria Aries", 
+        "email":"mary@mit.edu", 
+        "password":"passwords", 
+        "balance":100
+    },
+    {
+        "name":"Bruce Wayne", 
+        "email":"bruce@mit.edu", 
+        "password":"IAmBatman", 
+        "balance":100
+    },
+    {
+        "name":"Captain America", 
+        "email":"hottie@mit.edu", 
+        "password":"murica", 
+        "balance":100
+    }
+]
+

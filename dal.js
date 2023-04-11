@@ -1,13 +1,14 @@
 require("dotenv").config();
 const MongoClient = require('mongodb').MongoClient;
 //const url = 'mongodb://localhost:27017';
+const url = process.env.ATLAS_URI;
 let db = null;
 
  
 // connect to mongo
 MongoClient
     .connect(
-        process.env.ATLAS_URI, 
+        url, 
         { 
             useNewUrlParser: true,
             useUnifiedTopology: true,
@@ -15,12 +16,11 @@ MongoClient
     console.log("Connected successfully to db server");
 
     // connect to myproject database
-    db = client.db('badbank');
+    db = client.db('myproject');
 });
 
 // create user account using the collection.insertOne function
 function create(name, email, password) {
-    // TODO: populate this function based off the video
     return new Promise((resolve, reject) => {
         const collection = db.collection('users');
         const doc = {name, email, password, balance:0};
@@ -74,7 +74,6 @@ function update(email, amount) {
 
 // return all users by using the collection.find method
 function all() {
-    // TODO: populate this function based off the video
     return new Promise((resolve, reject) => {
         const customers = db 
         .collection('users')

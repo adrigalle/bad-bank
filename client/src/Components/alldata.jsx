@@ -1,6 +1,13 @@
+import React, { useState } from 'react';
+//import Records from './context/records.json';
+import { UserContext } from "./context/context";
+
 function AllData(){
     const [users, setUsers] = React.useState([]); 
     const { user, showUser, userBalance } = React.useContext(UserContext); 
+
+    const [data, setData] = useState("");
+
 
     React.useEffect(() => {
         
@@ -9,7 +16,9 @@ function AllData(){
             .then(response => response.json())
             .then(data => {
                 console.log(data);
-                setUsers([...data]);   
+                //setUsers([...data]);  
+                setData(JSON.stringify(data));
+
             });
 
     }, []);
@@ -17,8 +26,9 @@ function AllData(){
     return (
     <>
         <h5>All Data in Store:</h5>
+        {data}
 
-        <table className="table table-hover table-bordered table-sm w-50">
+        {/* <table className="table table-hover table-bordered table-sm w-50">
             <thead>
                 <tr>
                     <th className="th-lg" scope="col">Name</th>
@@ -61,6 +71,9 @@ function AllData(){
             </>
         ): (
             <h5>No Current User</h5>
-        )}
+        )} */}
     </>);
 }
+ 
+
+export default AllData;
