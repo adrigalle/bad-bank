@@ -1,24 +1,13 @@
 require("dotenv").config();
 const path = require("path");
-const MongoClient = require('mongodb').MongoClient;
+//const MongoClient = require('mongodb').MongoClient;
+const mongoose = require('mongoose');
 //const url = 'mongodb://localhost:27017';
 const url = process.env.MONGO_URI;
 let db = null;
 
  
-// connect to mongo
-MongoClient
-    .connect(
-        url, 
-        { 
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-        }, function (err, client) {
-    console.log("Connected successfully to db server");
 
-    // connect to myproject database
-    db = client.db('myproject');
-});
 
 // create user account using the collection.insertOne function
 function create(name, email, password) {
@@ -85,7 +74,27 @@ function all() {
     })
 }
 
+// connect to mongo
+// MongoClient
+//     .connect(
+//         url, 
+//         { 
+//             useNewUrlParser: true,
+//             useUnifiedTopology: true,
+//         }, function (err, client) {
+//     console.log("Connected successfully to db server");
 
+//     // connect to myproject database
+//     db = client.db('myproject');
+// });
+
+mongoose
+  .connect(
+    process.env.MONGODB_URI,            //  <--- UPDATE
+    {useNewUrlParser: true}
+  )
+  .then((x) => console.log('Connected to the DB')
+  .catch(err => console.error('Error while connecting to DB', err));
 
 module.exports = { create, findOne, find, update, all };
 
