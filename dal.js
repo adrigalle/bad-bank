@@ -1,14 +1,14 @@
 require("dotenv").config();
-const path = require("path");
+//const path = require("path");
 //const MongoClient = require('mongodb').MongoClient;
 const mongoose = require('mongoose');
 //const url = 'mongodb://localhost:27017';
-const url = process.env.MONGO_URI;
+//const url = process.env.MONGO_URI;
 let db = null;
 
 mongoose
 .connect(
-  process.env.MONGODB_URI,            //  <--- UPDATE
+    "mongodb+srv://adrianago1105:Jc9oZBqWYulgRG8y@cluster0.sgzjgks.mongodb.net/?retryWrites=true&w=majority",            //  <--- UPDATE
   {useNewUrlParser: true}
 )
 .then((x) => {
