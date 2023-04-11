@@ -13,7 +13,9 @@ code {
 
 
 .btn-light {
-  background-color: var(--primary);
+  background-color: var(--dark-blue);
+  outline: none !important;
+  color: var(--white);
 }
 
 
