@@ -16,7 +16,7 @@ function AllData(){
             .then(response => response.json())
             .then(data => {
                 console.log(data);
-                //setUsers([...data]);  
+                setUsers([...data]);  
                 setData(JSON.stringify(data));
 
             });
@@ -26,9 +26,8 @@ function AllData(){
     return (
     <>
         <h5>All Data in Store:</h5>
-        {data}
 
-        {/* <table className="table table-hover table-bordered table-sm w-50">
+        <table className="table table-hover table-bordered table-sm w-50">
             <thead>
                 <tr>
                     <th className="th-lg" scope="col">Name</th>
@@ -71,7 +70,7 @@ function AllData(){
             </>
         ): (
             <h5>No Current User</h5>
-        )} */}
+        )}
     </>);
 }
  

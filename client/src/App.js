@@ -34,18 +34,20 @@ function App() {
 
           {showUser ? <NavBar /> : <LilNavBar />}
 
-          <Routes className="container" style={{padding: "20px"}}>
+          <div className="content" style={{padding: "20px"}}>
+            <Routes>
 
-            <Route path="/" exact element={ <Home /> } />
-            <Route path="/createaccount/" element={ <CreateAccount /> } />
-            <Route path="/login/" element={ <Login /> } />
-            <Route path="/deposit/" element={ <Deposit /> } />
-            <Route path="/withdraw/" element={ <Withdraw /> } />
-            {/* <Route path="/transactions/" element={ <Transactions /> } /> */}
-            <Route path="/balance/" element={ <Balance /> } />
-            <Route path="/alldata/" element={ <AllData /> } />
+              <Route path="/" exact element={ <Home /> } />
+              <Route path="/createaccount/" element={ <CreateAccount /> } />
+              <Route path="/login/" element={ <Login /> } />
+              <Route path="/deposit/" element={ <Deposit /> } />
+              <Route path="/withdraw/" element={ <Withdraw /> } />
+              {/* <Route path="/transactions/" element={ <Transactions /> } /> */}
+              <Route path="/balance/" element={ <Balance /> } />
+              <Route path="/alldata/" element={ <AllData /> } />
 
-          </Routes>
+            </Routes>
+          </div>
 
         </UserContext.Provider>
 

@@ -1,12 +1,15 @@
 import React from 'react';
 //import React, { useContext} from 'react';
-import {Link} from "react-router-dom";
+import {Link} from "react-router-dom"; 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
+import './assets/nav.css';
 
 function LilNavBar(){
 
     return(
   
-      <nav className="navbar navbar-expand-lg bg-body-tertiary">
+      <nav className="navbar navbar-expand-lg bg-body-tertiary bg-dark">
         <div className="container-fluid">
   
           <Link className="navbar-brand" to="/"><img src="BadBank-logo.png" alt="" width="100" className="d-inline-block align-text-top"></img></Link>

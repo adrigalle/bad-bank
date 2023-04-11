@@ -11,23 +11,26 @@ code {
     monospace;
 }
 
-.nav-item:hover {
-  background: radial-gradient(ellipse, var(--light-blue) 5%, transparent 70%);
-  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
-}
-
-.nav {
-  margin-left: auto;
-}
 
 .btn-light {
   background-color: var(--primary);
 }
 
+
+
+.nav-item:hover {
+  background: radial-gradient(ellipse, var(--light-blue) 5%, transparent 70%);
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+}
+.nav {
+  margin-left: auto;
+}
 .bg-dark {
   background: linear-gradient(90deg, var(--dark-blue),var(--blue));
 }
-
+.navbar-expand-lg {
+  background: linear-gradient(90deg, var(--dark-blue),var(--blue)) !important;
+}
 .nav-link {
   color: var(--beige);
 }
@@ -37,9 +40,14 @@ code {
 .nav-link:focus {
   color: var(--yellow);
 }
+.navbar-text {
+  color: rgb(184, 184, 184);
+}
+
+
+
 .table {
   border: #d8a202;
-
 }
 .content {
   display: flex;

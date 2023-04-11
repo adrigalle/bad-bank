@@ -1,0 +1,72 @@
+.btn-light {
+    background-color: var(--primary);
+}
+
+
+
+.nav-item:hover {
+    background: radial-gradient(ellipse, var(--light-blue) 5%, transparent 70%);
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+}
+.nav {
+    margin-left: auto;
+}
+.bg-dark {
+    background: linear-gradient(90deg, var(--dark-blue),var(--blue));
+}
+.navbar-expand-lg {
+    background: linear-gradient(90deg, var(--dark-blue),var(--blue)) !important;
+}
+.nav-link {
+    color: var(--beige);
+}
+.nav-link:hover {
+    color: var(--off-white);
+}
+.nav-link:focus {
+    color: var(--yellow);
+}
+.navbar-text {
+    color: rgb(184, 184, 184);
+}
+
+
+
+.table {
+    border: #d8a202;
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+  
+  
+:root {
+    --dark-blue: #1C2C37;
+    --blue: #244D61;
+    --light-blue: #517886;
+    --dark-yellow:#70421F;
+    --yellow: #D58A45;
+    --white: #fff;
+    --gray: #C2C8C6;
+    --beige: #DCD7C9;
+    --off-white: #F6F5F1;
+    --primary: #7dade0;
+    --secondary: #6c757d;
+    --success: #93bb9c;
+    --info: #17a2b8;
+    --warning: #d8a202;
+    --danger: #dc3545;
+    --light: #f8f9fa;
+    --dark: #343a40;
+    --breakpoint-xs: 0;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+    --font-family-sans-serif: 'Figtree', sans-serif;
+    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+  
