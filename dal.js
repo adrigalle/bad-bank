@@ -93,7 +93,7 @@ mongoose
     process.env.MONGODB_URI,            //  <--- UPDATE
     {useNewUrlParser: true}
   )
-  .then((x) => console.log('Connected to the DB')
+  .then((x) => console.log('Connected to the DB'))
   .catch(err => console.error('Error while connecting to DB', err));
 
 module.exports = { create, findOne, find, update, all };
