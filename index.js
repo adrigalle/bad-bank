@@ -5,7 +5,15 @@ var dal     = require('./dal.js');
 const e = require('express');
 
 // used to serve static files from public directory
-app.use(express.static('client/build'));
+//app.use(express.static('client/build'));
+
+
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static("client/build"));
+    app.get("*", (req, res) => {
+        res.sendFile(path.resolve(_dirname, "client","build","index.html"));
+    });
+}
 app.use(cors());
 
 // create user account
