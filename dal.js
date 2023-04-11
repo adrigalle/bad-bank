@@ -6,7 +6,16 @@ const mongoose = require('mongoose');
 const url = process.env.MONGO_URI;
 let db = null;
 
- 
+mongoose
+.connect(
+  process.env.MONGODB_URI,            //  <--- UPDATE
+  {useNewUrlParser: true}
+)
+.then((x) => {
+    console.log('Connected to the DB');
+    db = client.db('myproject');
+})
+.catch(err => console.error('Error while connecting to DB', err));
 
 
 // create user account using the collection.insertOne function
@@ -88,13 +97,7 @@ function all() {
 //     db = client.db('myproject');
 // });
 
-mongoose
-  .connect(
-    process.env.MONGODB_URI,            //  <--- UPDATE
-    {useNewUrlParser: true}
-  )
-  .then((x) => console.log('Connected to the DB'))
-  .catch(err => console.error('Error while connecting to DB', err));
+
 
 module.exports = { create, findOne, find, update, all };
 
