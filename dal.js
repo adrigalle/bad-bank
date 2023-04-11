@@ -1,3 +1,4 @@
+require("dotenv").config();
 const MongoClient = require('mongodb').MongoClient;
 //const url = 'mongodb://localhost:27017';
 let db = null;
@@ -6,7 +7,7 @@ let db = null;
 // connect to mongo
 MongoClient
     .connect(
-        process.env.MONGODB_CONNECTION_STRING, 
+        process.env.ATLAS_URI, 
         { 
             useNewUrlParser: true,
             useUnifiedTopology: true,
