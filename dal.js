@@ -1,7 +1,8 @@
 require("dotenv").config();
+const path = require("path");
 const MongoClient = require('mongodb').MongoClient;
 //const url = 'mongodb://localhost:27017';
-const url = process.env.ATLAS_URI;
+const url = process.env.MONGO_URI;
 let db = null;
 
  
