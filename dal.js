@@ -3,7 +3,7 @@ require("dotenv").config();
 const MongoClient = require('mongodb').MongoClient;
 //const mongoose = require('mongoose');
 //const url = 'mongodb://localhost:27017';
-//const url = process.env.MONGO_URI;
+const url = process.env.MONGO_URI;
 let db = null;
 
 // mongoose
@@ -19,7 +19,7 @@ let db = null;
 // connect to mongo
 MongoClient
     .connect(
-        "mongodb+srv://adrianago1105:Jc9oZBqWYulgRG8y@cluster0.sgzjgks.mongodb.net/?retryWrites=true&w=majority", 
+        url, 
         { 
             useNewUrlParser: true,
             useUnifiedTopology: true,
