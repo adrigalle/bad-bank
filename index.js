@@ -7,13 +7,6 @@ const e = require('express');
 // used to serve static files from public directory
 app.use(express.static('client/build'));
 
-
-// if (process.env.NODE_ENV === "production") {
-//     app.use(express.static("client/build"));
-//     app.get("*", (req, res) => {
-//         res.sendFile(path.resolve(_dirname, "client","build","index.html"));
-//     });
-// }
 app.use(cors());
 
 // create user account
@@ -39,7 +32,6 @@ app.get('/account/create/:name/:email/:password', function (req, res) {
 
         });
 });
-
 
 // login user 
 app.get('/account/login/:email/:password', function (req, res) {
@@ -82,7 +74,6 @@ app.get('/account/findOne/:email', function (req, res) {
             res.send(user);
     });
 });
-
 
 // update - deposit/withdraw amount
 app.get('/account/update/:email/:amount', function (req, res) {

@@ -1,22 +1,8 @@
 require("dotenv").config();
-//const path = require("path");
 const MongoClient = require('mongodb').MongoClient;
-//const mongoose = require('mongoose');
-//const url = 'mongodb://localhost:27017';
 const url = process.env.MONGO_URI;
 let db = null;
 
-// mongoose
-// .connect(
-//     "mongodb+srv://adrianago1105:Jc9oZBqWYulgRG8y@cluster0.sgzjgks.mongodb.net/?retryWrites=true&w=majority",
-//   {useNewUrlParser: true}
-// )
-// .then((x) => {
-//     console.log('Connected to the DB');
-//     db = client.db('myproject');
-// })
-// .catch(err => console.error('Error while connecting to DB', err));
-// connect to mongo
 MongoClient
     .connect(
         url, 

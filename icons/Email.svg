@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Created with Vectornator (http://vectornator.io/) -->
+<svg height="40" stroke-miterlimit="10" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;" version="1.1" viewBox="0 0 1024 1024" width="40" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:vectornator="http://vectornator.io" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+<path d="M257.269 97.4482L887.567 97.4482C946.033 97.4482 993.43 144.845 993.43 203.311L993.43 790.478C993.43 848.945 946.033 896.342 887.567 896.342L257.269 896.342C198.802 896.342 151.406 848.945 151.406 790.478L151.406 203.311C151.406 144.845 198.802 97.4482 257.269 97.4482Z" id="Fill"/>
+<filter color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse" height="859.203" id="Filter" width="902.334" x="103.007" y="82.057">
+<feDropShadow dx="-18.2434" dy="14.7638" flood-color="#000000" flood-opacity="0.333" in="SourceGraphic" result="Shadow" stdDeviation="15.0775"/>
+</filter>
+<linearGradient gradientTransform="matrix(1 0 0 1 0 0)" gradientUnits="userSpaceOnUse" id="LinearGradient" x1="600.184" x2="625.174" y1="479.515" y2="946.639">
+<stop offset="0" stop-color="#ff7cae"/>
+<stop offset="1" stop-color="#b7557a"/>
+</linearGradient>
+<linearGradient gradientTransform="matrix(1 0 0 1 0 0)" gradientUnits="userSpaceOnUse" id="LinearGradient_2" x1="730.901" x2="748.202" y1="571.787" y2="-27.9772">
+<stop offset="0.553719" stop-color="#fac02c"/>
+<stop offset="1" stop-color="#ffffff" stop-opacity="0.925675"/>
+</linearGradient>
+<filter color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse" height="577.667" id="Filter_2" width="935.024" x="82.611" y="69.8855">
+<feDropShadow dx="-18.2434" dy="14.7638" flood-color="#000000" flood-opacity="0.333" in="SourceGraphic" result="Shadow" stdDeviation="15.0775"/>
+</filter>
+<linearGradient gradientTransform="matrix(1 0 0 1 0 0)" gradientUnits="userSpaceOnUse" id="LinearGradient_3" x1="272.932" x2="269.932" y1="482.993" y2="693.993">
+<stop offset="0.442149" stop-color="#fdcedd"/>
+<stop offset="1" stop-color="#ff7cae"/>
+</linearGradient>
+<filter color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse" height="116.604" id="Filter_3" width="295.196" x="-24.2915" y="530.024">
+<feDropShadow dx="-18.2434" dy="14.7638" flood-color="#000000" flood-opacity="0.333" in="SourceGraphic" result="Shadow" stdDeviation="15.0775"/>
+</filter>
+<linearGradient gradientTransform="matrix(1 0 0 1 0 0)" gradientUnits="userSpaceOnUse" id="LinearGradient_4" x1="265.932" x2="262.932" y1="349.993" y2="517.993">
+<stop offset="0.349174" stop-color="#fdcedd"/>
+<stop offset="1" stop-color="#ff7cae"/>
+</linearGradient>
+<filter color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse" height="116.604" id="Filter_4" width="236.183" x="36.5182" y="375.464">
+<feDropShadow dx="-18.2434" dy="14.7638" flood-color="#000000" flood-opacity="0.333" in="SourceGraphic" result="Shadow" stdDeviation="15.0775"/>
+</filter>
+</defs>
+<g id="Layer-2" vectornator:layerName="Layer 2">
+<use fill="#75e3cd" fill-rule="nonzero" filter="url(#Filter)" stroke="none" vectornator:shadowAngle="2.46123" vectornator:shadowColor="#000000" vectornator:shadowOffset="23.469" vectornator:shadowOpacity="0.333" vectornator:shadowRadius="30.155" xlink:href="#Fill"/>
+<clipPath id="ClipPath">
+<use xlink:href="#Fill"/>
+</clipPath>
+<g clip-path="url(#ClipPath)">
+<path d="M577.353 378.619L139.996 899.883L1014.71 899.883L577.353 378.619Z" fill="url(#LinearGradient)" fill-rule="nonzero" opacity="1" stroke="none"/>
+<path d="M568.367 602.633L131.009 85.2767L1005.72 85.2767L568.367 602.633Z" fill="url(#LinearGradient_2)" fill-rule="nonzero" filter="url(#Filter_2)" stroke="none" vectornator:shadowAngle="2.46123" vectornator:shadowColor="#000000" vectornator:shadowOffset="23.469" vectornator:shadowOpacity="0.333" vectornator:shadowRadius="30.155"/>
+</g>
+</g>
+<clipPath id="ArtboardFrame">
+<rect height="1024" width="1024" x="0" y="0"/>
+</clipPath>
+<g clip-path="url(#ArtboardFrame)" id="Layer-3" vectornator:layerName="Layer 3">
+<path d="M61.6984 545.416L221.401 545.416C242.162 545.416 258.993 558.017 258.993 573.563L258.993 573.563C258.993 589.108 242.162 601.71 221.401 601.71L61.6984 601.71C40.9373 601.71 24.107 589.108 24.107 573.563L24.107 573.563C24.107 558.017 40.9373 545.416 61.6984 545.416Z" fill="url(#LinearGradient_3)" fill-rule="nonzero" filter="url(#Filter_3)" stroke="none" vectornator:shadowAngle="2.46123" vectornator:shadowColor="#000000" vectornator:shadowOffset="23.469" vectornator:shadowOpacity="0.333" vectornator:shadowRadius="30.155"/>
+<path d="M113.064 390.855L232.643 390.855C248.188 390.855 260.79 403.457 260.79 419.002L260.79 419.002C260.79 434.547 248.188 447.149 232.643 447.149L113.064 447.149C97.5185 447.149 84.9166 434.547 84.9166 419.002L84.9166 419.002C84.9166 403.457 97.5185 390.855 113.064 390.855Z" fill="url(#LinearGradient_4)" fill-rule="nonzero" filter="url(#Filter_4)" stroke="none" vectornator:shadowAngle="2.46123" vectornator:shadowColor="#000000" vectornator:shadowOffset="23.469" vectornator:shadowOpacity="0.333" vectornator:shadowRadius="30.155"/>
+</g>
+</svg>
